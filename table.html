@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+	<style>
+		#table tr td {
+			background-color: #a9d;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			color: #333;
+			-webkit-user-select: none;
+		}
+	</style>
+</head>
+<body>
+	<table id="table"></table>
+	<script>
+		var table = document.getElementById("table");
+		for (var i = 0; i < 20; i++) {
+			var tr = document.createElement("tr");
+			table.appendChild(tr);
+			for(var j = 0; j < 20; j++) {
+				var td = document.createElement("td");
+				td.innerHTML = j+1;
+				tr.appendChild(td);
+			}
+		}
+		table.onclick = function(e) {
+			var e = e || window.event;
+			var target = e.target || e.srcEvent;
+			 if(target.tagName == "TD") {
+			 	target.style.backgroundColor = "#49f"
+			 	var h = target.innerHTML = "X";
+			 	console.log(h);
+			 }
+		}
+	</script>
+</body>
+</html>
+
+
+
+
